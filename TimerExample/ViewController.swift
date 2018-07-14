@@ -11,19 +11,23 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var startTimerButton: UIButton!
+    @IBOutlet weak var startOrPauseTimerButton: UIButton!
     
-    var myTimer = MyTimer(seconds: 10)
+    var myTimer = MyTimer(seconds: 25000)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         myTimer.delegate = self
-        timerLabel.text = myTimer.seconds.description
+        timerLabel.text = secondsToFullTime(seconds: myTimer.seconds)
     }
 
-    @IBAction func startTimerPressed(_ sender: UIButton) {
-        if !myTimer.isTimerRunning { timerLabel.text = myTimer.seconds.description }
-        myTimer.startTimer()
+    @IBAction func startOrPauseTimerPressed(_ sender: UIButton) {
+        if myTimer.isTimerPaused {
+            startOrPauseTimerButton.setTitle("pause", for: .normal)
+        } else {
+            startOrPauseTimerButton.setTitle("resume", for: .normal)
+        }
+        myTimer.startOrPauseTimer()
     }
     
 }
@@ -34,7 +38,14 @@ extension ViewController: MyTimerDelegate {
             timerLabel.text = "Finished"
             myTimer.stopAndResetTimer()
         } else {
-            timerLabel.text = seconds.description
+            timerLabel.text = secondsToFullTime(seconds: seconds)
         }
+    }
+    
+    func secondsToFullTime(seconds: Int) -> String {
+        let hours = seconds / 3600
+        let minutes = seconds / 60 % 60
+        let seconds = seconds % 60
+        return "\(hours):\(minutes):\(seconds)"
     }
 }

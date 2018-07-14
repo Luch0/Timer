@@ -18,32 +18,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-mw-Pf0">
-                                <rect key="frame" x="184" y="288" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-mw-Pf0">
+                                <rect key="frame" x="0.0" y="328.5" width="375" height="30"/>
                                 <state key="normal" title="start"/>
                                 <connections>
-                                    <action selector="startTimerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zjQ-ZJ-IqU"/>
+                                    <action selector="startOrPauseTimerPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8PX-ty-BOt"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfD-YU-usT">
-                                <rect key="frame" x="87" y="71" width="227" height="116"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfD-YU-usT">
+                                <rect key="frame" x="8" y="36" width="359" height="58"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfD-YU-usT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="3Nu-vS-1Vv"/>
+                            <constraint firstItem="mpc-mw-Pf0" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4Ej-G1-4GV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wfD-YU-usT" secondAttribute="trailing" constant="8" id="OLZ-ta-AHP"/>
+                            <constraint firstItem="wfD-YU-usT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="RyD-9p-moo"/>
+                            <constraint firstItem="mpc-mw-Pf0" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mcC-kc-B5c"/>
+                            <constraint firstItem="mpc-mw-Pf0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="zvg-gv-Mhr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="startTimerButton" destination="mpc-mw-Pf0" id="nvp-J2-7hy"/>
+                        <outlet property="startOrPauseTimerButton" destination="mpc-mw-Pf0" id="zG9-GJ-QLP"/>
                         <outlet property="timerLabel" destination="wfD-YU-usT" id="Mer-e2-tHN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="88.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>
